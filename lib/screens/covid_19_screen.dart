@@ -20,9 +20,9 @@ class Covid19Screen extends StatefulWidget {
 }
 
 class Covid19ScreenState extends State<Covid19Screen> {
-  bool isLoading = false;
+  bool isLoading=true;
   var firstObject;
-  List<Cities> citilesList=List();
+  List<Cities> citilesList = List();
   String districtAPI = 'https://api.covid19india.org/state_district_wise.json';
 
   @override
@@ -46,8 +46,183 @@ class Covid19ScreenState extends State<Covid19Screen> {
 //    print(firstObject.delhi.districtData.eastDelhi.confirmed.toString());
 //    print(firstObject.delhi.districtData.)
 
-     IndiaState indiaState = new IndiaState.fromJson(json);
-     indiaState.delhi.districtData.forEach((key, value) {
+    IndiaState indiaState = new IndiaState.fromJson(json);
+
+    indiaState.kerala.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.delhi.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.telangana.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.rajasthan.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.haryana.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.uttarPradesh.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.ladakh.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.tamilNadu.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.jammuAndKashmir.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.karnataka.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.maharashtra.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.punjab.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.andhraPradesh.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.uttarakhand.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.odisha.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.puducherry.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.westBengal.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.chandigarh.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.chhattisgarh.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.gujarat.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.himachalPradesh.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.madhyaPradesh.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.bihar.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.manipur.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.mizoram.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.goa.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.andamanAndNicobarIslands.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.jharkhand.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.assam.districtData.forEach((key, value) {
+      print('This is the key : ' + key);
+      print('Confirmed :' + value.confirmed.toString());
+      citilesList.add(Cities(key, value.confirmed));
+    });
+
+    indiaState.unknown.districtData.forEach((key, value) {
       print('This is the key : ' + key);
       print('Confirmed :' + value.confirmed.toString());
       citilesList.add(Cities(key, value.confirmed));
@@ -61,9 +236,21 @@ class Covid19ScreenState extends State<Covid19Screen> {
       appBar: AppBar(
         title: Text('Covid19'),
       ),
-      body: Center(child: Text('gaurav')),
+      body: isLoading
+          ? Center(child: Text('gaurav'))
+          : ListView.separated(
+              itemBuilder: (_, index) {
+                return ListTile(
+                  title: Text(citilesList[index].state,
+                      style: TextStyle(color: Theme.of(context).primaryColor)),
+                  subtitle: Text(citilesList[index].confirmed.toString()),
+                );
+              },
+              separatorBuilder: (_, __) => Divider(
+                    height: 1,
+                    color: Colors.green,
+                  ),
+              itemCount: citilesList.length),
     );
   }
 }
-
-
