@@ -20,7 +20,7 @@ class Covid19Screen extends StatefulWidget {
 }
 
 class Covid19ScreenState extends State<Covid19Screen> {
-  bool isLoading=true;
+  bool isLoading = true;
   var firstObject;
   List<Cities> citilesList = List();
   String districtAPI = 'https://api.covid19india.org/state_district_wise.json';

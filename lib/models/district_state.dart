@@ -186,8 +186,6 @@
 //  };
 //}
 
-
-
 class IndiaState {
   Kerala kerala;
   Delhi delhi;
@@ -254,37 +252,38 @@ class IndiaState {
   });
 
   factory IndiaState.fromJson(Map<String, dynamic> json) => IndiaState(
-    kerala: Kerala.fromJson(json["Kerala"]),
-    delhi: Delhi.fromJson(json["Delhi"]),
-    telangana: Telangana.fromJson(json["Telangana"]),
-    rajasthan: Rajasthan.fromJson(json["Rajasthan"]),
-    haryana: Haryana.fromJson(json["Haryana"]),
-    uttarPradesh: UttarPradesh.fromJson(json["Uttar Pradesh"]),
-    ladakh: Ladakh.fromJson(json["Ladakh"]),
-    tamilNadu: TamilNadu.fromJson(json["Tamil Nadu"]),
-    jammuAndKashmir: JammuAndKashmir.fromJson(json["Jammu and Kashmir"]),
-    karnataka: Karnataka.fromJson(json["Karnataka"]),
-    maharashtra: Maharashtra.fromJson(json["Maharashtra"]),
-    punjab: Punjab.fromJson(json["Punjab"]),
-    andhraPradesh: AndhraPradesh.fromJson(json["Andhra Pradesh"]),
-    uttarakhand: Uttarakhand.fromJson(json["Uttarakhand"]),
-    odisha: Odisha.fromJson(json["Odisha"]),
-    puducherry: Puducherry.fromJson(json["Puducherry"]),
-    westBengal: WestBengal.fromJson(json["West Bengal"]),
-    chandigarh: Chandigarh.fromJson(json["Chandigarh"]),
-    chhattisgarh: Chhattisgarh.fromJson(json["Chhattisgarh"]),
-    gujarat: Gujarat.fromJson(json["Gujarat"]),
-    himachalPradesh: HimachalPradesh.fromJson(json["Himachal Pradesh"]),
-    madhyaPradesh: MadhyaPradesh.fromJson(json["Madhya Pradesh"]),
-    bihar: Bihar.fromJson(json["Bihar"]),
-    manipur: Manipur.fromJson(json["Manipur"]),
-    mizoram: Mizoram.fromJson(json["Mizoram"]),
-    goa: Goa.fromJson(json["Goa"]),
-    andamanAndNicobarIslands: AndamanAndNicobarIslands.fromJson(json["Andaman and Nicobar Islands"]),
-    jharkhand: Jharkhand.fromJson(json["Jharkhand"]),
-    assam: Assam.fromJson(json["Assam"]),
-    unknown: Unknown.fromJson(json["Unknown"]),
-  );
+        kerala: Kerala.fromJson(json["Kerala"]),
+        delhi: Delhi.fromJson(json["Delhi"]),
+        telangana: Telangana.fromJson(json["Telangana"]),
+        rajasthan: Rajasthan.fromJson(json["Rajasthan"]),
+        haryana: Haryana.fromJson(json["Haryana"]),
+        uttarPradesh: UttarPradesh.fromJson(json["Uttar Pradesh"]),
+        ladakh: Ladakh.fromJson(json["Ladakh"]),
+        tamilNadu: TamilNadu.fromJson(json["Tamil Nadu"]),
+        jammuAndKashmir: JammuAndKashmir.fromJson(json["Jammu and Kashmir"]),
+        karnataka: Karnataka.fromJson(json["Karnataka"]),
+        maharashtra: Maharashtra.fromJson(json["Maharashtra"]),
+        punjab: Punjab.fromJson(json["Punjab"]),
+        andhraPradesh: AndhraPradesh.fromJson(json["Andhra Pradesh"]),
+        uttarakhand: Uttarakhand.fromJson(json["Uttarakhand"]),
+        odisha: Odisha.fromJson(json["Odisha"]),
+        puducherry: Puducherry.fromJson(json["Puducherry"]),
+        westBengal: WestBengal.fromJson(json["West Bengal"]),
+        chandigarh: Chandigarh.fromJson(json["Chandigarh"]),
+        chhattisgarh: Chhattisgarh.fromJson(json["Chhattisgarh"]),
+        gujarat: Gujarat.fromJson(json["Gujarat"]),
+        himachalPradesh: HimachalPradesh.fromJson(json["Himachal Pradesh"]),
+        madhyaPradesh: MadhyaPradesh.fromJson(json["Madhya Pradesh"]),
+        bihar: Bihar.fromJson(json["Bihar"]),
+        manipur: Manipur.fromJson(json["Manipur"]),
+        mizoram: Mizoram.fromJson(json["Mizoram"]),
+        goa: Goa.fromJson(json["Goa"]),
+        andamanAndNicobarIslands: AndamanAndNicobarIslands.fromJson(
+            json["Andaman and Nicobar Islands"]),
+        jharkhand: Jharkhand.fromJson(json["Jharkhand"]),
+        assam: Assam.fromJson(json["Assam"]),
+        unknown: Unknown.fromJson(json["Unknown"]),
+      );
 }
 
 class Kerala {
@@ -295,8 +294,9 @@ class Kerala {
   });
 
   factory Kerala.fromJson(Map<String, dynamic> json) => Kerala(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
 } //1
 
 class Delhi {
@@ -307,9 +307,10 @@ class Delhi {
   });
 
   factory Delhi.fromJson(Map<String, dynamic> json) => Delhi(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //2
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //2
 
 class Telangana {
   Map<String, DistrictDatum> districtData;
@@ -319,9 +320,10 @@ class Telangana {
   });
 
   factory Telangana.fromJson(Map<String, dynamic> json) => Telangana(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //3
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //3
 
 class Rajasthan {
   Map<String, DistrictDatum> districtData;
@@ -331,9 +333,10 @@ class Rajasthan {
   });
 
   factory Rajasthan.fromJson(Map<String, dynamic> json) => Rajasthan(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //4
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //4
 
 class Haryana {
   Map<String, DistrictDatum> districtData;
@@ -343,9 +346,10 @@ class Haryana {
   });
 
   factory Haryana.fromJson(Map<String, dynamic> json) => Haryana(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //5
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //5
 
 class UttarPradesh {
   Map<String, DistrictDatum> districtData;
@@ -355,9 +359,10 @@ class UttarPradesh {
   });
 
   factory UttarPradesh.fromJson(Map<String, dynamic> json) => UttarPradesh(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //6
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //6
 
 class Ladakh {
   Map<String, DistrictDatum> districtData;
@@ -367,9 +372,10 @@ class Ladakh {
   });
 
   factory Ladakh.fromJson(Map<String, dynamic> json) => Ladakh(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //7
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //7
 
 class TamilNadu {
   Map<String, DistrictDatum> districtData;
@@ -379,9 +385,10 @@ class TamilNadu {
   });
 
   factory TamilNadu.fromJson(Map<String, dynamic> json) => TamilNadu(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //8
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //8
 
 class JammuAndKashmir {
   Map<String, DistrictDatum> districtData;
@@ -390,10 +397,12 @@ class JammuAndKashmir {
     this.districtData,
   });
 
-  factory JammuAndKashmir.fromJson(Map<String, dynamic> json) => JammuAndKashmir(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //9
+  factory JammuAndKashmir.fromJson(Map<String, dynamic> json) =>
+      JammuAndKashmir(
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //9
 
 class Karnataka {
   Map<String, DistrictDatum> districtData;
@@ -403,9 +412,10 @@ class Karnataka {
   });
 
   factory Karnataka.fromJson(Map<String, dynamic> json) => Karnataka(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //10
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //10
 
 class Maharashtra {
   Map<String, DistrictDatum> districtData;
@@ -415,11 +425,12 @@ class Maharashtra {
   });
 
   factory Maharashtra.fromJson(Map<String, dynamic> json) => Maharashtra(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //11
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //11
 
-class Punjab{
+class Punjab {
   Map<String, DistrictDatum> districtData;
 
   Punjab({
@@ -427,9 +438,10 @@ class Punjab{
   });
 
   factory Punjab.fromJson(Map<String, dynamic> json) => Punjab(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //12
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //12
 
 class AndhraPradesh {
   Map<String, DistrictDatum> districtData;
@@ -439,9 +451,10 @@ class AndhraPradesh {
   });
 
   factory AndhraPradesh.fromJson(Map<String, dynamic> json) => AndhraPradesh(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //13
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //13
 
 class Uttarakhand {
   Map<String, DistrictDatum> districtData;
@@ -451,9 +464,10 @@ class Uttarakhand {
   });
 
   factory Uttarakhand.fromJson(Map<String, dynamic> json) => Uttarakhand(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //14
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //14
 
 class Odisha {
   Map<String, DistrictDatum> districtData;
@@ -463,9 +477,10 @@ class Odisha {
   });
 
   factory Odisha.fromJson(Map<String, dynamic> json) => Odisha(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //15
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //15
 
 class Puducherry {
   Map<String, DistrictDatum> districtData;
@@ -475,9 +490,10 @@ class Puducherry {
   });
 
   factory Puducherry.fromJson(Map<String, dynamic> json) => Puducherry(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //16
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //16
 
 class WestBengal {
   Map<String, DistrictDatum> districtData;
@@ -487,9 +503,10 @@ class WestBengal {
   });
 
   factory WestBengal.fromJson(Map<String, dynamic> json) => WestBengal(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //17
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //17
 
 class Chandigarh {
   Map<String, DistrictDatum> districtData;
@@ -499,9 +516,10 @@ class Chandigarh {
   });
 
   factory Chandigarh.fromJson(Map<String, dynamic> json) => Chandigarh(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //18
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //18
 
 class Chhattisgarh {
   Map<String, DistrictDatum> districtData;
@@ -511,9 +529,10 @@ class Chhattisgarh {
   });
 
   factory Chhattisgarh.fromJson(Map<String, dynamic> json) => Chhattisgarh(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //19
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //19
 
 class Gujarat {
   Map<String, DistrictDatum> districtData;
@@ -523,9 +542,10 @@ class Gujarat {
   });
 
   factory Gujarat.fromJson(Map<String, dynamic> json) => Gujarat(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //20
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //20
 
 class HimachalPradesh {
   Map<String, DistrictDatum> districtData;
@@ -534,10 +554,12 @@ class HimachalPradesh {
     this.districtData,
   });
 
-  factory HimachalPradesh.fromJson(Map<String, dynamic> json) => HimachalPradesh(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //21
+  factory HimachalPradesh.fromJson(Map<String, dynamic> json) =>
+      HimachalPradesh(
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //21
 
 class MadhyaPradesh {
   Map<String, DistrictDatum> districtData;
@@ -547,9 +569,10 @@ class MadhyaPradesh {
   });
 
   factory MadhyaPradesh.fromJson(Map<String, dynamic> json) => MadhyaPradesh(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //22
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //22
 
 class Bihar {
   Map<String, DistrictDatum> districtData;
@@ -559,9 +582,10 @@ class Bihar {
   });
 
   factory Bihar.fromJson(Map<String, dynamic> json) => Bihar(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //23
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //23
 
 class Manipur {
   Map<String, DistrictDatum> districtData;
@@ -571,9 +595,10 @@ class Manipur {
   });
 
   factory Manipur.fromJson(Map<String, dynamic> json) => Manipur(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //24
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //24
 
 class Mizoram {
   Map<String, DistrictDatum> districtData;
@@ -583,9 +608,10 @@ class Mizoram {
   });
 
   factory Mizoram.fromJson(Map<String, dynamic> json) => Mizoram(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //25
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //25
 
 class Goa {
   Map<String, DistrictDatum> districtData;
@@ -595,9 +621,10 @@ class Goa {
   });
 
   factory Goa.fromJson(Map<String, dynamic> json) => Goa(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //26
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //26
 
 class AndamanAndNicobarIslands {
   Map<String, DistrictDatum> districtData;
@@ -606,10 +633,12 @@ class AndamanAndNicobarIslands {
     this.districtData,
   });
 
-  factory AndamanAndNicobarIslands.fromJson(Map<String, dynamic> json) => AndamanAndNicobarIslands(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //27
+  factory AndamanAndNicobarIslands.fromJson(Map<String, dynamic> json) =>
+      AndamanAndNicobarIslands(
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //27
 
 class Jharkhand {
   Map<String, DistrictDatum> districtData;
@@ -619,9 +648,10 @@ class Jharkhand {
   });
 
   factory Jharkhand.fromJson(Map<String, dynamic> json) => Jharkhand(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //28
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //28
 
 class Assam {
   Map<String, DistrictDatum> districtData;
@@ -631,9 +661,10 @@ class Assam {
   });
 
   factory Assam.fromJson(Map<String, dynamic> json) => Assam(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //29
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //29
 
 class Unknown {
   Map<String, DistrictDatum> districtData;
@@ -643,12 +674,10 @@ class Unknown {
   });
 
   factory Unknown.fromJson(Map<String, dynamic> json) => Unknown(
-    districtData: Map.from(json["districtData"]).map((k, v) => MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-  );
-}  //30
-
-
-
+        districtData: Map.from(json["districtData"]).map((k, v) =>
+            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+      );
+} //30
 
 class DistrictDatum {
   int confirmed;
@@ -660,12 +689,12 @@ class DistrictDatum {
   });
 
   factory DistrictDatum.fromJson(Map<String, dynamic> json) => DistrictDatum(
-    confirmed: json["confirmed"],
-    lastupdatedtime: json["lastupdatedtime"],
-  );
+        confirmed: json["confirmed"],
+        lastupdatedtime: json["lastupdatedtime"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "confirmed": confirmed,
-    "lastupdatedtime": lastupdatedtime,
-  };
+        "confirmed": confirmed,
+        "lastupdatedtime": lastupdatedtime,
+      };
 }
