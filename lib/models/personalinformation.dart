@@ -12,8 +12,9 @@ class Welcome {
   });
 
   factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
-    travelHistory: List<TravelHistory>.from(json["travel_history"].map((x) => TravelHistory.fromJson(x))),
-  );
+        travelHistory: List<TravelHistory>.from(
+            json["travel_history"].map((x) => TravelHistory.fromJson(x))),
+      );
 }
 
 class TravelHistory {
@@ -46,19 +47,19 @@ class TravelHistory {
   });
 
   factory TravelHistory.fromJson(Map<String, dynamic> json) => TravelHistory(
-    cn6Ca: json["_cn6ca"],
-    accuracylocation: accuracylocationValues.map[json["accuracylocation"]],
-    address: json["address"],
-    datasource: json["datasource"],
-    latlong: json["latlong"],
-    modeoftravel: modeoftravelValues.map[json["modeoftravel"]],
-    pid: json["pid"],
-    placename: json["placename"],
-    timefrom: json["timefrom"],
-    timeto: json["timeto"],
-    type: typeValues.map[json["type"]],
-    d2Mkx: json["_d2mkx"] == null ? null : json["_d2mkx"],
-  );
+        cn6Ca: json["_cn6ca"],
+        accuracylocation: accuracylocationValues.map[json["accuracylocation"]],
+        address: json["address"],
+        datasource: json["datasource"],
+        latlong: json["latlong"],
+        modeoftravel: modeoftravelValues.map[json["modeoftravel"]],
+        pid: json["pid"],
+        placename: json["placename"],
+        timefrom: json["timefrom"],
+        timeto: json["timeto"],
+        type: typeValues.map[json["type"]],
+        d2Mkx: json["_d2mkx"] == null ? null : json["_d2mkx"],
+      );
 }
 
 enum Accuracylocation { EMPTY, APPROXIMATE, ACCURATE }
@@ -69,10 +70,24 @@ final accuracylocationValues = EnumValues({
   "": Accuracylocation.EMPTY
 });
 
-enum Modeoftravel { EMPTY, TAXI, AMBULANCE, AUTORIKSHAW, MANGALA_EXPRESS_SLEEPER, AIR_INDIA_FLIGHT_NO_AI_960_JEDDAH_TO_KARIPUR, AUTOCAB, BUS, PRIVATE_CAR, FLIGHT, BUS_BENZY_TRAVELS, CAR }
+enum Modeoftravel {
+  EMPTY,
+  TAXI,
+  AMBULANCE,
+  AUTORIKSHAW,
+  MANGALA_EXPRESS_SLEEPER,
+  AIR_INDIA_FLIGHT_NO_AI_960_JEDDAH_TO_KARIPUR,
+  AUTOCAB,
+  BUS,
+  PRIVATE_CAR,
+  FLIGHT,
+  BUS_BENZY_TRAVELS,
+  CAR
+}
 
 final modeoftravelValues = EnumValues({
-  "Air India Flight No. AI 960 (Jeddah to Karipur)": Modeoftravel.AIR_INDIA_FLIGHT_NO_AI_960_JEDDAH_TO_KARIPUR,
+  "Air India Flight No. AI 960 (Jeddah to Karipur)":
+      Modeoftravel.AIR_INDIA_FLIGHT_NO_AI_960_JEDDAH_TO_KARIPUR,
   "Ambulance": Modeoftravel.AMBULANCE,
   "Autocab": Modeoftravel.AUTOCAB,
   "Autorikshaw": Modeoftravel.AUTORIKSHAW,
