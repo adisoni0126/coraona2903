@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:coraona2903/models/testcount_statewise_stats.dart';
+import 'package:coraona2903/services/whole_app.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:coraona2903/models/district_state.dart';
 import 'package:coraona2903/models/class_citites.dart';
 import 'package:coraona2903/models/class_short_statewise_data.dart';
+import 'package:get_it/get_it.dart';
 
 class Covid19Screen extends StatefulWidget {
   @override
@@ -16,14 +18,17 @@ class Covid19Screen extends StatefulWidget {
 }
 
 class Covid19ScreenState extends State<Covid19Screen> {
+  WholeApp get service => GetIt.I<WholeApp>();
   bool isLoading = false;
   var firstObject;
 
 //  List<Cities> citilesList = List();
+//2  List<ShortStatewiseData> shortList = List();
+
   List<ShortStatewiseData> shortList = List();
 
 //  String districtAPI = 'https://api.covid19india.org/state_district_wise.json';
-  String testCountStatewiseStats = 'https://api.covid19india.org/data.json';
+//2  String testCountStatewiseStats = 'https://api.covid19india.org/data.json';
 
   @override
   void initState() {
@@ -32,40 +37,41 @@ class Covid19ScreenState extends State<Covid19Screen> {
 
     _givenFunction();
   }
-  
+
   _givenFunction() async {
     setState(() {
       isLoading = true;
     });
 
-//    final httpRequest = await http.get(districtAPI);
-//    final json = jsonDecode(httpRequest.body);
-
-    final httpRequestTestCount = await http.get(testCountStatewiseStats);
-    final testJson = jsonDecode(httpRequestTestCount.body);
-
-    Master masterAll = Master.fromJson(testJson);
-
-//    print(masterAll.statewise.where((key) => key.state == 'Delhi'));
-
-    masterAll.statewise.forEach(
-      (key) {
-//        print(
-//            'city : ${key.state}   confirmed : ${key.confirmed}   active: ${key.active}    deaths : ${key.deaths}');
-        shortList.add(
-          ShortStatewiseData(
-            state: key.state,
-            confirmed: key.confirmed,
-            active: key.active,
-            death: key.deaths,
-          ),
-        );
-      },
-    );
+    await service.givenFunction();
+    shortList = service.shortList;
 
     setState(() {
       isLoading = false;
     });
+
+//    final httpRequest = await http.get(districtAPI);
+//    final json = jsonDecode(httpRequest.body);
+
+//2    final httpRequestTestCount = await http.get(testCountStatewiseStats);
+//2    final testJson = jsonDecode(httpRequestTestCount.body);
+
+//2    Master masterAll = Master.fromJson(testJson);
+
+//    print(masterAll.statewise.where((key) => key.state == 'Delhi'));
+
+//2    masterAll.statewise.forEach(
+//2      (key) {
+//2        shortList.add(
+//2          ShortStatewiseData(
+//2            state: key.state,
+//2            confirmed: key.confirmed,
+//2            active: key.active,
+//2            death: key.deaths,
+//2          ),
+//2        );
+//2      },
+//2    );
 
 //    IndiaState indiaState = new IndiaState.fromJson(json);
 //    indiaState.kerala.districtData.forEach((key, value) {
