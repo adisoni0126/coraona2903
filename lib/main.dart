@@ -4,6 +4,7 @@
 
 import 'dart:convert';
 import 'package:coraona2903/screens/covid_19_screen.dart';
+import 'package:coraona2903/screens/one_state_details.dart';
 import 'package:coraona2903/services/whole_app.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -24,7 +25,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'StatusBar',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: Covid19Screen(),
+      initialRoute: '/',
+      routes: {
+        '/': (ctx) => Covid19Screen(),
+        '/oneStateDetails': (ctx) => OneStateDetails(),
+      },
     );
   }
 }

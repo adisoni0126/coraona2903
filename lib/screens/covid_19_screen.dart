@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:coraona2903/models/testcount_statewise_stats.dart';
+import 'package:coraona2903/screens/one_state_details.dart';
 import 'package:coraona2903/services/whole_app.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
@@ -23,58 +24,35 @@ class Covid19ScreenState extends State<Covid19Screen> {
   var firstObject;
 
 //  List<Cities> citilesList = List();
-//2  List<ShortStatewiseData> shortList = List();
 
   List<ShortStatewiseData> shortList = List();
 
 //  String districtAPI = 'https://api.covid19india.org/state_district_wise.json';
-//2  String testCountStatewiseStats = 'https://api.covid19india.org/data.json';
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
 
-
     _givenFunction();
   }
+
+
 
   _givenFunction() async {
     setState(() {
       isLoading = true;
     });
 
-    await service.givenFunction();
-    shortList = service.shortList;
-
-    setState(() {
-      isLoading = false;
-    });
-
 //    final httpRequest = await http.get(districtAPI);
 //    final json = jsonDecode(httpRequest.body);
 
-//2    final httpRequestTestCount = await http.get(testCountStatewiseStats);
-//2    final testJson = jsonDecode(httpRequestTestCount.body);
+    await service.stateWiseStats();
+    shortList = service.shortList;
 
-//2    Master masterAll = Master.fromJson(testJson);
-
-//    print(masterAll.statewise.where((key) => key.state == 'Delhi'));
-
-//2    masterAll.statewise.forEach(
-//2      (key) {
-//2        shortList.add(
-//2          ShortStatewiseData(
-//2            state: key.state,
-//2            confirmed: key.confirmed,
-//2            active: key.active,
-//2            death: key.deaths,
-//2          ),
-//2        );
-//2      },
-//2    );
-
+    await service.districtWiseStats();
 //    IndiaState indiaState = new IndiaState.fromJson(json);
+//
 //    indiaState.kerala.districtData.forEach((key, value) {
 //      print('This is the key : ' + key);
 //      print('Confirmed :' + value.confirmed.toString());
@@ -249,11 +227,24 @@ class Covid19ScreenState extends State<Covid19Screen> {
 //      citilesList.add(Cities(key, value.confirmed));
 //    });
 //
-//    indiaState.unknown.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
+////    indiaState.unknown.districtData.forEach((key, value) {
+////      print('This is the key : ' + key);
+////      print('Confirmed :' + value.confirmed.toString());
+////      citilesList.add(Cities(key, value.confirmed));
+////    });
+
+
+
+    setState(() {
+      isLoading = false;
+    });
+
+
+
+
+//    print(masterAll.statewise.where((key) => key.state == 'Delhi'));
+
+
   }
 
   @override
@@ -270,47 +261,52 @@ class Covid19ScreenState extends State<Covid19Screen> {
           return ListView.builder(
             itemCount: shortList.length,
             itemBuilder: (BuildContext ctx, index) {
-              return Card(
-                elevation: 5,
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      child: Text(
-                        shortList[index].confirmed,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.purple,
-                        ),
-                      ),
-                      margin: EdgeInsets.symmetric(
-                        vertical: 10,
-                        horizontal: 15,
-                      ),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.purple)),
-                      padding: EdgeInsets.all(10),
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          'State: ${shortList[index].state}',
+              return InkWell(
+                onTap: () {
+                  Navigator.of(ctx).pushNamed(OneStateDetails.routeName);
+                },
+                child: Card(
+                  elevation: 5,
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          shortList[index].confirmed,
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
-                              color: Colors.blue),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.purple,
+                          ),
                         ),
-                        Text(
-                          'Active:  ${shortList[index].active}',
-                          style: TextStyle(color: Colors.green, fontSize: 12),
+                        margin: EdgeInsets.symmetric(
+                          vertical: 10,
+                          horizontal: 15,
                         ),
-                        Text(
-                          'Death:  ${shortList[index].death}',
-                          style: TextStyle(color: Colors.grey, fontSize: 10),
-                        ),
-                      ],
-                    ),
-                  ],
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.purple)),
+                        padding: EdgeInsets.all(10),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            'State: ${shortList[index].state}',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                                color: Colors.blue),
+                          ),
+                          Text(
+                            'Active:  ${shortList[index].active}',
+                            style: TextStyle(color: Colors.green, fontSize: 12),
+                          ),
+                          Text(
+                            'Death:  ${shortList[index].death}',
+                            style: TextStyle(color: Colors.grey, fontSize: 10),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               );
             },

@@ -216,7 +216,6 @@ class IndiaState {
   AndamanAndNicobarIslands andamanAndNicobarIslands;
   Jharkhand jharkhand;
   Assam assam;
-  Unknown unknown;
 
   IndiaState({
     this.kerala,
@@ -248,7 +247,6 @@ class IndiaState {
     this.andamanAndNicobarIslands,
     this.jharkhand,
     this.assam,
-    this.unknown,
   });
 
   factory IndiaState.fromJson(Map<String, dynamic> json) => IndiaState(
@@ -282,7 +280,6 @@ class IndiaState {
             json["Andaman and Nicobar Islands"]),
         jharkhand: Jharkhand.fromJson(json["Jharkhand"]),
         assam: Assam.fromJson(json["Assam"]),
-        unknown: Unknown.fromJson(json["Unknown"]),
       );
 }
 
@@ -666,18 +663,18 @@ class Assam {
       );
 } //29
 
-class Unknown {
-  Map<String, DistrictDatum> districtData;
-
-  Unknown({
-    this.districtData,
-  });
-
-  factory Unknown.fromJson(Map<String, dynamic> json) => Unknown(
-        districtData: Map.from(json["districtData"]).map((k, v) =>
-            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
-      );
-} //30
+//class Unknown {
+//  Map<String, DistrictDatum> districtData;
+//
+//  Unknown({
+//    this.districtData,
+//  });
+//
+//  factory Unknown.fromJson(Map<String, dynamic> json) => Unknown(
+//        districtData: Map.from(json["districtData"]).map((k, v) =>
+//            MapEntry<String, DistrictDatum>(k, DistrictDatum.fromJson(v))),
+//      );
+//} //30
 
 class DistrictDatum {
   int confirmed;
