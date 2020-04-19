@@ -35,6 +35,7 @@ class Covid19ScreenState extends State<Covid19Screen> {
     // TODO: implement initState
     super.initState();
 
+
     _givenFunction();
   }
 
