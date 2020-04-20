@@ -27,8 +27,6 @@ class Covid19ScreenState extends State<Covid19Screen> {
 
   List<ShortStatewiseData> shortList = List();
 
-//  String districtAPI = 'https://api.covid19india.org/state_district_wise.json';
-
   @override
   void initState() {
     // TODO: implement initState
@@ -37,214 +35,19 @@ class Covid19ScreenState extends State<Covid19Screen> {
     _givenFunction();
   }
 
-
-
   _givenFunction() async {
     setState(() {
       isLoading = true;
     });
 
-//    final httpRequest = await http.get(districtAPI);
-//    final json = jsonDecode(httpRequest.body);
-
     await service.stateWiseStats();
     shortList = service.shortList;
-
-    await service.districtWiseStats();
-//    IndiaState indiaState = new IndiaState.fromJson(json);
-//
-//    indiaState.kerala.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.delhi.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.telangana.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.rajasthan.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.haryana.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.uttarPradesh.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.ladakh.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.tamilNadu.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.jammuAndKashmir.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.karnataka.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.maharashtra.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.punjab.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.andhraPradesh.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.uttarakhand.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.odisha.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.puducherry.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.westBengal.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.chandigarh.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.chhattisgarh.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.gujarat.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.himachalPradesh.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.madhyaPradesh.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.bihar.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.manipur.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.mizoram.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.goa.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.andamanAndNicobarIslands.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.jharkhand.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-//    indiaState.assam.districtData.forEach((key, value) {
-//      print('This is the key : ' + key);
-//      print('Confirmed :' + value.confirmed.toString());
-//      citilesList.add(Cities(key, value.confirmed));
-//    });
-//
-////    indiaState.unknown.districtData.forEach((key, value) {
-////      print('This is the key : ' + key);
-////      print('Confirmed :' + value.confirmed.toString());
-////      citilesList.add(Cities(key, value.confirmed));
-////    });
-
-
 
     setState(() {
       isLoading = false;
     });
 
-
-
-
 //    print(masterAll.statewise.where((key) => key.state == 'Delhi'));
-
-
   }
 
   @override
@@ -263,7 +66,7 @@ class Covid19ScreenState extends State<Covid19Screen> {
             itemBuilder: (BuildContext ctx, index) {
               return InkWell(
                 onTap: () {
-                  Navigator.of(ctx).pushNamed(OneStateDetails.routeName);
+                  Navigator.of(ctx).push(MaterialPageRoute(builder: (context)=>OneStateDetails(passedState: shortList[index].state,)));
                 },
                 child: Card(
                   elevation: 5,

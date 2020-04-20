@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (ctx) => Covid19Screen(),
-        '/oneStateDetails': (ctx) => OneStateDetails(),
+//        '/oneStateDetails': (ctx) => OneStateDetails(),
       },
     );
   }
